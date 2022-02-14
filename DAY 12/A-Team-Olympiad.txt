@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 
 using namespace std;
-
+ 
 int main()
 {
     int n,i,t1[5000],t2[5000],t3[5000],x=0,y=0,z=0,w,s;
