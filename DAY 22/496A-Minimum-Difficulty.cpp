@@ -14,7 +14,7 @@ int main()
         d[i] = r[i] - r[i - 1];
         s = max(s, d[i]);
     }
-
+ 
     for (int i = 2; i < n; i++)
         m = max(min(m, d[i] + d[i - 1]), s);
 
