@@ -2,23 +2,42 @@
 using namespace std;
 
 int main() {
-	long long l, r;
-	cin >> l >> r;
-
-	if (r - l + 1 < 3) {
-	 	cout << -1;
-	 	return 0;
-	}
-
-	if (l % 2 == 0) {
-	 	cout << l << ' ' << l + 1 << ' ' << l + 2 ;
-	 	return 0;
-	}
-
-	if (r - l + 1 > 3){
-	 	cout << l + 1 << ' ' << l + 2 << ' ' << l + 3;
-	 	return 0;
-	}
-
-	cout << -1 << endl;
+    
+    int n, flag=0;
+    char s[305][305], diag, other;
+    cin>>n;
+    
+    for(int i=0; i<n; i++)
+        cin>>s[i];
+    
+    diag=s[0][0];
+    other=s[0][1];
+    
+    if(diag==other)
+        flag=1;
+    
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            if(i==j || i+j==n-1)
+            {
+                if(s[i][j] != diag){
+                    flag=1;
+                    break;
+                }
+            }
+            else
+            {
+               if(s[i][j] != other){
+                   flag = 1;
+                   break;
+               } 
+            }
+        }
+        if(flag) break;
+    }
+    
+    if(flag) cout<<"NO";
+    else cout<<"YES";
+    
+    return 0;
 }	
