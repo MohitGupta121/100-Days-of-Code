@@ -7,7 +7,7 @@ int main()
     cin >> n >> k;
 
     string s;
-    while (n--)
+    while (n--) 
     {
         int lucky(0);
         cin >> s;
