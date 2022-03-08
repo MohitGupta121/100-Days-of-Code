@@ -2,53 +2,16 @@
 using namespace std;
 int main()
 {
-        int i,j,k;
-        int n,m;
-        int count=0;
-
-
-        cin>>n>>m;
-        char a[n][m],ch[n],max;
-        int s[n];
-
-        for(i=0;i<n;i++)
+    string s, t;
+    cin >> s >> t;
+    size_t pos = 0;
+    for (size_t i = 0; i < t.length(); ++i)
+    {
+        if (t[i] == s[pos])
         {
-            for(j=0;j<m;j++)
-            {
-                cin>>a[i][j];
-            }
-
-            s[i]=0;
+            pos += 1;
         }
-
-        for(i=0;i<m;i++)
-        {
-            for(j=0;j<n;j++)
-            {
-                ch[j]=a[j][i];
-            }
-
-            sort(ch,ch+n);
-            max=(ch[n-1]);
-
-            for(j=0;j<n;j++)
-            {
-                if(a[j][i]==max)
-                {
-
-                    s[j]++;
-                }
-            }
-
-        }
-
-        for(i=0;i<n;i++)
-        {
-            if(s[i]>0)
-                count++;
-        }
-
-        cout<<count<<endl;
-
-        return 0;
+    }
+    cout << pos + 1 << endl;
+    return 0;
 }
